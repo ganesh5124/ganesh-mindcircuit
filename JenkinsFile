@@ -17,7 +17,7 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage('EXCUTE SHELL') {
+        stage('EXCUTE SHELL FOR SONAR') {
             steps {
                 echo 'CLONING FROM GIT REPO'
                 echo "DISPLAYING SONAR"
