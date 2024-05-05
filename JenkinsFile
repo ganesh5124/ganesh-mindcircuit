@@ -17,6 +17,15 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+        stage('EXCUTE SHELL') {
+            steps {
+                echo 'CLONING FROM GIT REPO'
+                echo "DISPLAYING SONAR"
+                sh '''mvn sonar:sonar \\
+                  -Dsonar.host.url=http://65.0.179.34:9000 \\
+                  -Dsonar.login=9ae5023958a9a2eda6d0387949344df8da191944'''
+            }
+        }
         stage('DEPLOY TO TOMCAT') {
             steps {
                 echo 'DEPLOY TO TOMCAT'
