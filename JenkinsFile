@@ -8,7 +8,7 @@ pipeline {
         stage('CLONE SCM') {
             steps {
                 echo 'CLONING FROM GIT REPO'
-                git 'https://github.com/ganesh5124/java-jsp-diary.git'
+                git 'https://github.com/ganesh5124/ganesh-mindcircuit.git'
             }
         }
         stage('EXCUTE SHELL') {
