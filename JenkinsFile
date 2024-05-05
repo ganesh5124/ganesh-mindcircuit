@@ -26,6 +26,12 @@ pipeline {
                   -Dsonar.login=9ae5023958a9a2eda6d0387949344df8da191944'''
             }
         }
+        stage('EXCUTE SHELL FOR ARTIFACTORY') {
+            steps {
+                echo 'CLONING FROM GIT REPO'
+                sh 'mvn clean deploy'
+            }
+        }
         stage('DEPLOY TO TOMCAT') {
             steps {
                 echo 'DEPLOY TO TOMCAT'
