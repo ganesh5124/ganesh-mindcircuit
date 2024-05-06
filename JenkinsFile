@@ -38,20 +38,5 @@ pipeline {
                 deploy adapters: [tomcat9(credentialsId: 'tomcat-id', path: '', url: 'http://3.110.92.81:8091')], contextPath: 'NEW-mc', war: '**/*.war'
             }
         }
-        
-        stage('Parallel Stages') {
-            parallel {
-                stage('Stage 1') {
-                    steps {
-                        echo 'Stage 1 executed'
-                    }
-                }
-                stage('Stage 2') {
-                    steps {
-                        echo 'Stage 2 executed'
-                    }
-                }
-            }
-        }
     }
 }
